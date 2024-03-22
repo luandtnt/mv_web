@@ -11,15 +11,15 @@ const movies = [
     name: "The Boys",
     imdb: 9.3,
     date: "2022",
-    sposter: "src/img/the boys.jpg",
-    bposter: "src/img/the boys1.jpg",
+    sposter: "./src/img/the boys.jpg",
+    bposter: "../img/the boys1.jpg",
     genre: "Action",
     type: "series",
-    url: "src/theboy.html",
+    url: "./src/theboy.html",
     trailer: "john wick.webm",
-    low: "src/video/theboys.webm",
-    medium: "src/video/the boys 720ph.mp4",
-    high: "src/video/the boys 1080ph.mp4",
+    low: "./src/video/theboys.webm",
+    medium: "./src/video/the boys 720ph.mp4",
+    high: "./src/video/the boys 1080ph.mp4",
   },
   {
     id: 2,
@@ -253,9 +253,15 @@ app.use(bodyParser.json());
 
 app.use('/WatchMv/:name', (req, res) => {
   var mv = null
+  var luan = null
+  
   if (req.method === 'GET') {
-      res.json(mv)
-      
+    var name = req.params.name;
+    //var { name } = req.body;
+    luan = movies.filter(movie => movie.name === name);
+    res.json(luan)
+    console.log(luan)
+
   } else if (req.method === 'POST') {
     var { name } = req.body; // Lấy tên bộ phim từ request body
     mv = movies.filter(movie => movie.name === name);

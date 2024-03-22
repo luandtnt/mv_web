@@ -10,6 +10,7 @@ import Kid from './Components/Kid.jsx'
 import Movies from './Components/Movies.jsx'
 import WatchMv from './Components/WatchMv.jsx'
 import Xemphim from './Components/Xemphim.jsx';
+import Test from './Components/test.jsx';
 
 // eslint-disable-next-line react-refresh/only-export-components
 function Main() {
@@ -34,6 +35,7 @@ function Main() {
           <Route path='/Series' element={<SeriesPage data={movies} />}/>
           <Route path='/Kid' element={<Kid data={movies}/>}/>
           <Route path='/WatchMv/:name' element={<WatchMv />}/>
+          <Route path='/test' element={<Test />}/>
           <Route path='/Xemphim' element={<Xemphim />}/> {/* Đường dẫn bên ngoài */}
         </Routes>
       </BrowserRouter>
